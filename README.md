@@ -70,5 +70,3 @@ If you want to read, modify, or extend the logic of the tool, you can run the ra
 
 ---
 
-**Project Lead:** KANNE BHARATH  
-**Focus:** Purple Team Automation, Defensive Verification Engineering, and Cyber Range Infrastructure
