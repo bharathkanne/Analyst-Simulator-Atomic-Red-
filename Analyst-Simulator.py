@@ -194,11 +194,10 @@ class AtomicEnterpriseGUI:
         
         # --- ADD THESE LINES TO SET THE WINDOW ICON ---
         try:
-            # Using the raw string (r"") for your exact absolute path
-            icon_path = r"C:\Users\bhara\Downloads\security.ico"
+            icon_path = r"C:\Users\bhara\Downloads\Analyst-Simulator\security.ico"
             self.root.iconbitmap(icon_path)
-        except Exception as e:
-            self.logger.warning(f"Could not load icon: {e}")
+        except Exception:
+            pass # <--- CHANGE THIS: Tell the script to just ignore the error and keep going
         # ----------------------------------------------
 
         # FIX 1: Teardown protocol to prevent zombie processes on exit
