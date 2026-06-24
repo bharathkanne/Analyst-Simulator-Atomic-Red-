@@ -1,4 +1,4 @@
-# 🎓 Analyst-Simulator-Atomic-Red- (Atomic Enterprise)
+# 🎓 Analyst-Simulator-Atomic-Red-
 **Student Cyber Range & Purple Team Simulator**
 
 [![Release](https://img.shields.io/github/v/release/bharathkanne/Analyst-Simulator-Atomic-Red-?label=Latest%20Release)](https://github.com/bharathkanne/Analyst-Simulator-Atomic-Red-/releases/tag/v1.0.0)
@@ -15,18 +15,11 @@ By decoupling a high DPI-aware user interface from a background PowerShell execu
 ## 🎯 Educational Learning Objectives
 
 ### 1. Master the MITRE ATT&CK Framework
-* **Interactive Mapping:** The app automatically parses Red Canary's index databases to populate a searchable list of real-world adversary techniques.
-* **Contextual Exploration:** Students can search specific keywords (like "registry" or "lsass") to instantly see which techniques map to specific Windows subsystems.
 
 ### 2. Understand How Attackers Attack (Offensive Mechanics)
-* **Adversarial Code Inspection:** Clicking "Read Source Code" opens the raw intelligence YAML configurations, exposing the exact logic and commands used by actual threat actors.
-* **PowerShell Command Dissection:** The Live Command Override terminal exposes the exact syntax being dispatched to hidden background processes, teaching students how tools bypass default execution policies.
-* **Risk Categorization:** Programmatic Safe Mode Guardrails actively intercept high-risk techniques (like ransomware or disk wipers), teaching students the vital real-world boundary between safe auditing and destructive actions.
 
 ### 3. Learn How Defensive Test Tools Work (Purple Team Lifecycle)
-* **Staging and Dependency Auditing:** Toggling strategies like `-CheckPrereqs` and `-GetPrereqs` teaches students how professional enterprise assessment tools verify and drop remote payloads before an execution.
-* **Forensic Auditing:** The engine logs every event timestamp and exit code, allowing students to export an HTML Purple Team Summary Report—replicating the exact analytical deliverable handed to security leadership during an enterprise assessment.
-* **Environment Hygiene:** Toggling the `-Cleanup` strategy teaches students how to safely wipe execution traces, delete dropped binaries, and restore a host to its pristine baseline.
+
 
 ---
 
