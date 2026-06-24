@@ -21,6 +21,18 @@ import csv
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple, Any
 
+
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 # --- HIGH DPI AWARENESS FOR CRISP FONTS ---
 try:
     ctypes.windll.shcore.SetProcessDpiAwareness(1)
@@ -61,6 +73,12 @@ class EmulationEngine:
     def download_framework(self) -> None:
         """Retrieves and provisions the core execution modules from source."""
         self.logger.info("[*] Initiating API module retrieval pipelines...")
+        # --- NEW CODE: Install PowerShell-YAML Dependency ---
+        self.logger.info("[*] Verifying PowerShell-YAML parsing dependencies...")
+        subprocess.run(
+            ["powershell", "-ExecutionPolicy", "Bypass", "-Command", "Install-Module -Name powershell-yaml -Force -Scope CurrentUser -AllowClobber"],
+            creationflags=subprocess.CREATE_NO_WINDOW
+        )
         try:
             # 1. Download the Invoke-AtomicRedTeam Execution Engine
             url_invoke = "https://github.com/redcanaryco/invoke-atomicredteam/archive/refs/heads/master.zip"
@@ -194,7 +212,8 @@ class AtomicEnterpriseGUI:
         
         # --- ADD THESE LINES TO SET THE WINDOW ICON ---
         try:
-            icon_path = r"C:\Users\bhara\Downloads\Analyst-Simulator\security.ico"
+            # Replace "your_icon.ico" with the exact name of your icon file in the git folder
+            icon_path = resource_path("security.ico")
             self.root.iconbitmap(icon_path)
         except Exception:
             pass # <--- CHANGE THIS: Tell the script to just ignore the error and keep going
